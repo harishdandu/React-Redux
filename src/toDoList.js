@@ -4,6 +4,7 @@ import { addTodo, deleteTodo, editTodo } from './actions';
 
 const TodoList = () => {
   const todos = useSelector(state => state.todos);
+
   const dispatch = useDispatch();
 
   const handleAddTodo = (text) => {
@@ -20,7 +21,7 @@ const TodoList = () => {
 
   return (
     <div>
-      <h1>Todo List</h1>
+      {/* <h1>Todo List</h1>
       <ul>
         {todos.map(todo => (
           <li key={todo.id}>
@@ -30,7 +31,7 @@ const TodoList = () => {
           </li>
         ))}
       </ul>
-      <button onClick={() => handleAddTodo('New Todo')}>Add Todo</button>
+      <button onClick={() => handleAddTodo('New Todo')}>Add Todo</button> */}
     </div>
   );
 };

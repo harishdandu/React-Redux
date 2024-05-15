@@ -7,11 +7,20 @@ import rootReducer from './reducers'; // Assuming you have a rootReducer
 
 import App from './App';
 
-const store = createStore(rootReducer); // Create Redux store
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(
-  <Provider store={store}> {/* Wrap your App component with Provider */}
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+const store = createStore(rootReducer); // Create Redux store
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<Provider store={store}> {/* Wrap your App component with Provider */}
+<App />
+</Provider>);
+
+
+
+// ReactDOM.render(
+//   <Provider store={store}> {/* Wrap your App component with Provider */}
+//     <App />
+//   </Provider>,
+//   document.getElementById('root')
+// );
